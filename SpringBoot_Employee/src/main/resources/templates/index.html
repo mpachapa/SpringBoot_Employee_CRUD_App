@@ -33,9 +33,13 @@
         </table>
 
         <div th:if ="${totalPages > 1}">
-            <div class="row col-sm-10">
+            <div class="row col-md">
                 <div class = "col-sm-2">
-                    Total Rows: [[${totalItems}}]]
+                    Total Rows: [[${totalItems}]]
+                </div>
+                <div class = "col-sm-1">
+                    <span th:if="${currentPage == 1}"> </span>
+                    <a th:unless="${currentPage == 1}" th:href="@{'/page/' + ${currentPage - 1}}">Previous</a>
                 </div>
                 <div class = "col-sm-1">
                     <span th:each="i:${#numbers.sequence(1,totalPages)}">

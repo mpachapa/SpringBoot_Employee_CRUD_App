@@ -21,8 +21,7 @@ public class EmployeeController {
     //Homepage Displaying List of Employees
     @GetMapping("/")
     public String viewHomePage(Model model){
-        model.addAttribute("listOfEmployees",employeeService.getAllEmployees());
-        return "index";
+        return findPaginated(1,model);
     }
 
     //Adding a New Employee
@@ -58,7 +57,7 @@ public class EmployeeController {
 
     @GetMapping("/page/{pageNo}")
     public String findPaginated(@PathVariable (value = "pageNo") int pageNo, Model model){
-        int pageSize = 5;
+        int pageSize = 6;
 
         Page<Employee> page = employeeService.findPageinated(pageNo,pageSize);
         List<Employee> listOfEmployee = page.getContent();
