@@ -57,7 +57,7 @@ public class EmployeeController {
                                 @RequestParam("sortField") String sortField,
                                 @RequestParam("sortDir") String sortDir,
                                 Model model){
-        int pageSize = 6;
+        int pageSize = 5;
 
         Page<Employee> page = employeeService.findPageinated(pageNo,pageSize,sortField,sortDir);
         List<Employee> listOfEmployee = page.getContent();
