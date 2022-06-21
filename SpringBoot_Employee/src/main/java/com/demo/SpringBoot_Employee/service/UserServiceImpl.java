@@ -4,6 +4,8 @@ import com.demo.SpringBoot_Employee.dto.UserRegistrationDTO;
 import com.demo.SpringBoot_Employee.model.Role;
 import com.demo.SpringBoot_Employee.model.User;
 import com.demo.SpringBoot_Employee.repository.UserRepository;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -23,6 +25,11 @@ public class UserServiceImpl implements UserService {
         User user = new User(registrationDTO.getFirstName(),registrationDTO.getLastName(),registrationDTO.getEmail(), registrationDTO.getPassword(), Arrays.asList(new Role("ROLE_USER")));
 
         return userRepository.save(user);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        return null;
     }
 
 

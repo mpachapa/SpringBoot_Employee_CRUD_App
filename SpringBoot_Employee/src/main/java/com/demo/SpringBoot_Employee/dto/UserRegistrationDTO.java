@@ -14,11 +14,15 @@ public class UserRegistrationDTO {
         this.password = password;
     }
 
+    public UserRegistrationDTO() {
+
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String lastName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 

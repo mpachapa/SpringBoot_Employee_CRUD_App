@@ -3,8 +3,6 @@ package com.demo.SpringBoot_Employee.model;
 import java.util.Collection;
 import javax.persistence.*;
 
-
-
 @Entity //JPA Entity
 @Table(name = "users_table", uniqueConstraints = @UniqueConstraint(columnNames = "email"))
 public class User {
@@ -39,7 +37,11 @@ public class User {
         this.roles = roles;
     }
 
-    public long getId() {
+    public User (){
+
+    }
+
+    public Long getId() {
         return id;
     }
 
