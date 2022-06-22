@@ -39,13 +39,22 @@ public class SecurityCongfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity https) throws Exception {
         https.authorizeRequests().antMatchers(
-                "/registration**",
-                "/js/**","/css/**","/img/**"
-        ).permitAll().anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").permitAll()
-                .and().logout().invalidateHttpSession(true)
-                .clearAuthentication(true).logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login?logout").permitAll();
+                "/registration**","/templates/**")
+                .permitAll()
+                .anyRequest()
+                .authenticated()
+                .and()
+                    .formLogin()
+                    .loginPage("/login")
+                    .defaultSuccessUrl("/?success",true)
+                    .permitAll()
+                .and()
+                    .logout()
+                    .invalidateHttpSession(true)
+                    .clearAuthentication(true)
+                    .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+                    .logoutSuccessUrl("/login?logout")
+                    .permitAll();
     }
 
 }
