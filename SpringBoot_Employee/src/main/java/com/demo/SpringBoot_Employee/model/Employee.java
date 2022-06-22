@@ -3,7 +3,7 @@ package com.demo.SpringBoot_Employee.model;
 import javax.persistence.*;
 
 @Entity //JPA Entity
-@Table (name = "employees")
+@Table(name = "employees")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
