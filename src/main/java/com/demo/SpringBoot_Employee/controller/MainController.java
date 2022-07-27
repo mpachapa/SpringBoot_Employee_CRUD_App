@@ -13,12 +13,17 @@ public class MainController {
 
     @GetMapping("/home")
     public String home(){
-        return "index";
+        return "home";
+    }
+
+    @GetMapping("/")
+    public String blank(){
+        return "home";
     }
 
     @GetMapping("/index")
     public String index(){
-        return "index";
+        return "home";
     }
 
 }
