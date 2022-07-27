@@ -39,14 +39,14 @@ public class SecurityCongfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity https) throws Exception {
         https.authorizeRequests().antMatchers(
-                "/registration**","/templates/**")
+                        "/","/registration**","/templates/**","/home**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
                     .formLogin()
                     .loginPage("/login")
-                    .defaultSuccessUrl("/?success",true)
+                    .defaultSuccessUrl("/employees?success",true)
                     .permitAll()
                 .and()
                     .logout()
