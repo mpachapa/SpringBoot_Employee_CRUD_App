@@ -42,14 +42,14 @@ public class EmployeeController {
     @PostMapping("/saveEmployee")
     public String saveEmployee(@ModelAttribute("employee") Employee employee){
         employeeService.saveEmployee(employee);
-        return "redirect:/";
+        return "redirect:/employees";
     }
 
     //Deleting an Employee from Database
     @GetMapping("/deleteEmployee/{id}")
     public String deleteEmployee(@PathVariable (value = "id") long id){
         this.employeeService.deleteEmployeeById(id);
-        return "redirect:/";
+        return "redirect:/employees";
     }
 
     @GetMapping("/employees/page/{pageNo}")
