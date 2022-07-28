@@ -22,7 +22,7 @@
         </div>
     </div>
 </nav>
-    <div class="container my-2">
+    <section class="container my-2">
         <h3>Update Employee</h3>
         <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
             <input type="hidden" th:field="*{id}" />
@@ -33,7 +33,7 @@
         </form>
         <br>
         <a th:href="@{/}" >Back to Employee List</a>
-    </div>
+    </section>
 </body>
 
 <footer>
