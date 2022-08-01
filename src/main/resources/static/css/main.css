@@ -11,6 +11,7 @@ footer, header, main, nav, section {
     display: block
 }
 a {
+    color: inherit;
     background-color: transparent
 }
 a:active, a:hover {
@@ -30,26 +31,6 @@ hr {
     border: 0;
     border-top: 1px solid #eee;
     margin: 20px 0;
-}
-button, input, select, textarea {
-    font: inherit;
-    margin: 0
-}
-button, input {
-    overflow: visible
-}
-button, select {
-    text-transform: none
-}
-button, [type=button], [type=reset], [type=submit] {
-    -webkit-appearance: button
-}
-button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner {
-    border-style: none;
-    padding: 0
-}
-button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring {
-    outline: 1px dotted ButtonText
 }
 fieldset {
     border: 1px solid #c0c0c0;
@@ -93,9 +74,6 @@ img {
     max-width: 100%;
     height: auto
 }
-a {
-    color: inherit
-}
 td, th {
     padding: 8px 8px;
     display: table-cell;
@@ -103,7 +81,7 @@ td, th {
     vertical-align: top
 }
 button {
-    border: none;
+    /* overflow: visible; */
     display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
@@ -277,10 +255,6 @@ check, radio {
         width: 99.99999%
     }
 }
-
-.rest {
-    overflow: hidden
-}
 .stretch {
     margin-left: -16px;
     margin-right: -16px
@@ -311,33 +285,26 @@ check, radio {
 .cell-bottom {
     vertical-align: bottom
 }
-.hide {
-    display: none !important
-}
 .show-block, .show {
     display: block !important
 }
 .show-inline-block {
     display: inline-block !important
 }
-
 @media (max-width: 1205px) {
     .auto {
         max-width: 95%
     }
 }
-
 @media (max-width: 992px) {
     .main {
         margin-left: 0 !important;
         margin-right: 0 !important
     }
-
     .auto {
         max-width: 100%
     }
 }
-
 .top, .bottom {
     position: fixed;
     width: 100%;
@@ -430,10 +397,6 @@ check, radio {
 }
 .circle {
     border-radius: 50%
-}
-
-.row-padding, .row-padding > .half, .row-padding > .third, .row-padding > .twothird, .row-padding > .threequarter, .row-padding > .quarter, .row-padding > .col {
-    padding: 0 8px
 }
 .container {
     padding: 0.01em 16px
