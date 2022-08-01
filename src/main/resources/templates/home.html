@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <title>Employee Management System</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-
+    <link th:href="@{/css/main.css}" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Welcome to this Employee Management Website</h1>
-    <section>
-        <span><a class="" href="/login.html" th:href="@{/login}">Login</a> </span>
-        <span>New user? <a class="" href="/registration.html" th:href="@{/registration}">Register here.</a></span>
+<body class="light-blue">
+    <h1 class="center">Welcome to this Employee Management Website</h1>
+    <hr>
+    <section class="center">
+        <span><a class="animate-zoom" href="/login.html" th:href="@{/login}">Login</a> </span>
+        <span>New user? <a class="animate-zoom" href="/registration.html" th:href="@{/registration}">Register here.</a></span>
     </section>
 </body>
 
