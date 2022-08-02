@@ -9,25 +9,23 @@
 </head>
 
 <body>
-<nav class="row justify-content-end align-items-center p-2">
-    <div class="col-10 pr-0 text-right"><h2>Employee Management System</h2></div>
-    <div class="col">
-        <div class="row justify-content-center align-items-center" id="welcome">
-            <p>Welcome,</p>
-            <p sec:authentication="principal.username"> User</p>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <span sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><button class="buttonLogout">Logout</button></a></span>
-        </div>
+<nav class="container">
+    <div class="left-align"><h2>Employee Management System</h2></div>
+    <div class="right-align" id="welcome">
+        <p>Welcome,</p>
+        <p sec:authentication="principal.username"> User</p>
+        <span sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><button class="buttonLogout">Logout</button></a></span>
     </div>
 </nav>
-    <section class="container my-2">
+<hr>
+    <section>
         <div th:if="${param.success}">
-            <div class="alert alert-info">Log in successful.</div>
+            <div class="">Log in successful.</div>
         </div>
-        <h3>Employee List</h3>
-        <a th:href="@{/newEmployee}" class="btn btn-primary btn-sm mb-3"> Add Employee </a>
-        <table border="1" class="table table-striped table-responsive-md">
+        <div class="auto">
+        <h3>Employee List</h3> <a th:href="@{/newEmployee}" class=""><button> Add Employee </button></a>
+        </div>
+        <table border="1" class="auto">
             <thead>
                 <tr>
                     <th><a th:href="@{'/employees/page/' + ${currentPage} + '?sortField=firstName&sortDir=' + ${reverseSortDir}}">Employee First Name</a></th>
@@ -41,32 +39,25 @@
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                     <td th:text="${employee.email}"></td>
-                    <td><a th:href="@{/updateForm/{id}(id=${employee.id})}" class="btn btn-primary"> Update </a>
-                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}" class="btn btn-danger"> Delete </a></td>
+                    <td><a th:href="@{/updateForm/{id}(id=${employee.id})}"><button> Update</button></a>
+                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"><button> Delete </button></a></td>
                 </tr>
             </tbody>
         </table>
-
+        <div th:if ="${totalPages > 1}" class="right-align auto">
+            Total Rows: [[${totalItems}]]
+        </div>
         <div th:if ="${totalPages > 1}">
-            <div class="row col-md">
-                <div class = "col-sm-2">
-                    Total Rows: [[${totalItems}]]
-                </div>
-                <div class = "col-sm-1">
+            <div class="auto center ">
+                <div>
                     <span th:if="${currentPage == 1}"> </span>
                     <a th:unless="${currentPage == 1}" th:href="@{'/employees/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a>
-                </div>
-                <div class = "col-sm-1">
                     <span th:each="i:${#numbers.sequence(1,totalPages)}">
                         <a th:if="${currentPage != i}" th:href="@{'/employees/page/'+ ${i} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">[[${i}]]</a>
                         <span th:unless="${currentPage != i}">[[${i}]]</span> &nbsp; &nbsp;
                     </span>
-                </div>
-                <div class = "col-sm-1">
                     <a th:if="${currentPage < totalPages}" th:href="@{'/employees/page/' + ${currentPage+1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Next</a>
                     <span th:unless="${currentPage < totalPages}">Next</span>
-                </div>
-                <div class = "col-sm-1">
                     <a th:if="${currentPage < totalPages}" th:href="@{'/employees/page/' + ${totalPages} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Last</a>
                     <span th:unless="${currentPage < totalPages}">Last</span>
                 </div>
@@ -78,6 +69,6 @@
 </body>
 
 <footer>
-    <h6 class="">&copy Matthew Pachapa 2022</h6>
+    <h6 class="right-align">&copy Matthew Pachapa 2022</h6>
 </footer>
 </html>

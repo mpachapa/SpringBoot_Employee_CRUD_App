@@ -141,6 +141,7 @@ check, radio {
 .center {
     display: inline-block;
     width: auto;
+    margin:auto;
 }
 
 .block {
