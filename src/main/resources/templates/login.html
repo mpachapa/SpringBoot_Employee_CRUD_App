@@ -22,19 +22,19 @@
     <br><br>
 
     <!-- Login Form -->
-    <section class="container">
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+    <section class="container auto">
+        <div class="">
+            <div class="">
                 <h1>User Login</h1>
                 <form th:action="@{/login}" method="POST">
                     <!-- Error Message -->
                     <div th:if="${param.error}">
-                        <div class="alert alert-danger">Invalid Username or Password</div>
+                        <div class="">Invalid Username or Password</div>
                     </div>
 
                     <!-- Logout Message -->
                     <div th:if="${param.logout}">
-                        <div class="alert alert-info">You have successfully logged out.</div>
+                        <div class="">You have successfully logged out.</div>
                     </div>
 
                     <div class="form-group">
@@ -46,16 +46,16 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password"/>
                     </div>
                     <br>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-6 col-sm-offset-3">
-                                <input type="submit" name="login-submit" id="login-submit" class="form-control btn btn-primary" value="Log In">
+                    <div class="">
+                        <div class="">
+                            <div class="">
+                                <input type="submit" name="login-submit" id="login-submit" class="" value="Log In">
                             </div>
                         </div>
                     </div>
                 </form>
 
-                <div class="form-group">
+                <div class="">
                     <span>New user? <a href="/" th:href="@{/registration}">Register here.</a></span>
                 </div>
             </div>
@@ -66,7 +66,7 @@
 
 <footer>
     <footer>
-        <h6 class="position-absolute bottom-0 end-0 m-1">&copy Matthew Pachapa 2022</h6>
+        <h6 class="right-align bottom auto">&copy Matthew Pachapa 2022</h6>
     </footer>
 </footer>
 </html>

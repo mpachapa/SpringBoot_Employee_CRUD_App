@@ -14,7 +14,7 @@
     <div class="right-align" id="welcome">
         <p>Welcome,</p>
         <p sec:authentication="principal.username"> User</p>
-        <span sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><button class="buttonLogout">Logout</button></a></span>
+        <span sec:authorize="isAuthenticated()"><a th:href="@{/logout}"><button class="light-blue border-light-blue hover-blue hover-border-blue">Logout</button></a></span>
     </div>
 </nav>
 <hr>
@@ -23,7 +23,7 @@
             <div class="">Log in successful.</div>
         </div>
         <div class="auto">
-        <h3>Employee List</h3> <a th:href="@{/newEmployee}" class=""><button> Add Employee </button></a>
+        <h3>Employee List</h3> <a th:href="@{/newEmployee}" class=""><button class="light-green border-light-green hover-green hover-border-green"> Add Employee </button></a>
         </div>
         <table border="1" class="auto">
             <thead>
@@ -39,8 +39,8 @@
                     <td th:text="${employee.firstName}"></td>
                     <td th:text="${employee.lastName}"></td>
                     <td th:text="${employee.email}"></td>
-                    <td><a th:href="@{/updateForm/{id}(id=${employee.id})}"><button> Update</button></a>
-                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"><button> Delete </button></a></td>
+                    <td><a th:href="@{/updateForm/{id}(id=${employee.id})}"><button class="pale-yellow border-pale-yellow hover-yellow hover-border-yellow"> Update</button></a>
+                    <a th:href="@{/deleteEmployee/{id}(id=${employee.id})}"><button class="pale-red border-pale-red hover-border-red hover-red"> Delete </button></a></td>
                 </tr>
             </tbody>
         </table>
@@ -48,7 +48,7 @@
             Total Rows: [[${totalItems}]]
         </div>
         <div th:if ="${totalPages > 1}">
-            <div class="auto center ">
+            <div class="auto">
                 <div>
                     <span th:if="${currentPage == 1}"> </span>
                     <a th:unless="${currentPage == 1}" th:href="@{'/employees/page/' + ${currentPage - 1} + '?sortField=' + ${sortField} + '&sortDir=' + ${sortDir}}">Previous</a>
@@ -69,6 +69,6 @@
 </body>
 
 <footer>
-    <h6 class="right-align">&copy Matthew Pachapa 2022</h6>
+    <h6 class="right-align bottom auto">&copy Matthew Pachapa 2022</h6>
 </footer>
 </html>

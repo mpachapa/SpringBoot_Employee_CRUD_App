@@ -10,12 +10,12 @@
 <body>
     <br><br>
     <!-- html form -->
-    <section class="container">
-        <div class="row">
-            <div class="column-6 col-md-offset-3">
+    <section class="">
+        <div class="">
+            <div class="">
                 <!-- success message -->
                 <div th:if="${param.success}">
-                    <div class="alert alert-info"> You have successfully registered your account! </div>
+                    <div class=""> You have successfully registered your account! </div>
                 </div>
                 <h1>Registration</h1>
                 <form th:action="@{/registration}" method="POST" th:object="${user}">
@@ -28,7 +28,10 @@
                             <input id="email" class="form-control" th:field="*{email}" required autofocus="autofocus">
                         <label class="control-label" for="password">Password </label>
                             <input id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus">
+                        <label class="control-label" for="password2">Password </label>
+                            <input id="password2" class="form-control" type="password" th:field="*{password2}" required autofocus="autofocus">
                     </div>
+
                     <br>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Register</button>
@@ -43,7 +46,7 @@
 
 <footer>
     <footer>
-        <h6 class="position-absolute bottom-0 end-0 m-1">&copy Matthew Pachapa 2022</h6>
+        <h6 class="right-align bottom auto">&copy Matthew Pachapa 2022</h6>
     </footer>
 </footer>
 </html>
