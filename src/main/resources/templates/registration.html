@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Registraion</title>
@@ -28,10 +28,7 @@
                             <input id="email" class="form-control" th:field="*{email}" required autofocus="autofocus">
                         <label class="control-label" for="password">Password </label>
                             <input id="password" class="form-control" type="password" th:field="*{password}" required autofocus="autofocus">
-                        <label class="control-label" for="password2">Password </label>
-                            <input id="password2" class="form-control" type="password" th:field="*{password2}" required autofocus="autofocus">
                     </div>
-
                     <br>
                     <div class="form-group">
                         <button type="submit" class="btn btn-success">Register</button>

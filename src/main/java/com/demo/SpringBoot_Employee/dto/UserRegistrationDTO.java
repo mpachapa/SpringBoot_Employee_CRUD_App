@@ -5,6 +5,7 @@ public class UserRegistrationDTO {
     private String lastName;
     private String email;
     private String password;
+    private String password2;
 
     public UserRegistrationDTO(String firstName, String lastName, String email, String password){
         super();
@@ -48,5 +49,13 @@ public class UserRegistrationDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getPassword2() {
+        return password2;
+    }
+
+    public void setPassword2(String password) {
+        this.password2 = password2;
     }
 }
