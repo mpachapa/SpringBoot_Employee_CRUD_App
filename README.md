@@ -10,4 +10,3 @@ update an existing entry's information, or delete them completely from the datab
 ## Heroku Deployment
 I deployed this application on Heroku so that you are able to interact with this full stack application. 
 Heroku supports Java as well as database operations with their integrated services.
-You are able to see this application deployed [here](https://spring-employee-management-mp.herokuapp.com/).
